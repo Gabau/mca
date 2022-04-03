@@ -11,3 +11,5 @@ export const typeOrmOptions: TypeOrmModuleOptions = {
   entities: [User],
   synchronize: false,
 };
+
+export const portNumber = 3001;

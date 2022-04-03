@@ -12,7 +12,7 @@ import { UsersService } from './users.service';
 import { User } from './interfaces/user.interface';
 import { DeleteResult, InsertResult, UpdateResult } from 'typeorm';
 
-@Controller('users')
+@Controller('/api/users')
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 

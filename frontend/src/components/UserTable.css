@@ -1,0 +1,17 @@
+.table {
+  grid-column: 2 / 6;
+  table-layout: fixed;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.table > thead {
+  background-color: aliceblue;
+  color: black;
+}
+
+.table > tbody {
+  background-color: antiquewhite;
+  color: black;
+}

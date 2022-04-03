@@ -1,0 +1,13 @@
+.Row > th{
+  column-gap: 10px;
+  
+}
+
+.name-input {
+  width: 40%;
+}
+
+.age-input {
+  width: 10%;
+}
+
