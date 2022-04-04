@@ -3,6 +3,7 @@ type EditFormUser = {
   age: string,
   date: string,
   id: number,
+  occupation: string;
 }
 
 export default EditFormUser;

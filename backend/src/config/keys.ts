@@ -7,7 +7,7 @@ export const typeOrmOptions: TypeOrmModuleOptions = {
   port: 3306,
   username: 'root',
   password: 'password',
-  database: 'mcatestDB',
+  database: 'mcatestdb',
   entities: [User],
   synchronize: false,
 };

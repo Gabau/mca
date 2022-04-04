@@ -3,7 +3,7 @@ import { getUsers } from '../api/UsersAPI';
 import User from '../models/User';
 import UserFormButton from './UserFormButton';
 import UserRow from './UserRow';
-import './UserTable.css'
+import './styles/UserTable.css'
 
 type UserTableState = {
     users: User[],
@@ -25,6 +25,7 @@ export default function UserTable() {
                 <td>Name</td>
                 <td>Age</td>
                 <td>Date Created</td>
+                <td>Occupation</td>
                 <td>Actions</td>
                 <td>
                     <UserFormButton onClose={refresh} />

@@ -1,5 +1,6 @@
 import { deleteUser } from "../api/UsersAPI";
 import React from 'react'
+import "./styles/Button.css"
 
 
 type DeleteUserButtonProps = {
@@ -8,7 +9,9 @@ type DeleteUserButtonProps = {
 };
 
 export default function DeleteUserButton(props: DeleteUserButtonProps) {
-    return <button onClick={deleteRow(props.id, props.refresh)}>Delete</button>
+    return <button 
+                className="delete-button"
+                onClick={deleteRow(props.id, props.refresh)}>Delete</button>
 }
 
 function deleteRow(id: number, refresh: () => void) {

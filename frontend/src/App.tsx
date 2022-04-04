@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import SideBar from './components/SideBar';
 import TopBar from './components/TopBar';
 import Router from './routes/Router';
 

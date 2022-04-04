@@ -1,10 +1,10 @@
-import { userInfo } from "os";
-import React, { ChangeEvent, FormEvent, useState } from "react";
+import moment from "moment";
+import React, { FormEvent, useState } from "react";
 import { updateUser } from "../api/UsersAPI";
 import EditFormUser from "../models/EditFormUser";
 import User from "../models/User";
 import DeleteUserButton from "./DeleteUserButton";
-import "./UserRow.css"
+import "./styles/UserRow.css"
 
 type UserRowProps = {
     user: User,
@@ -19,10 +19,6 @@ type UserRowState = {
 
 type EditUserRowProps = UserRowProps & { onClose: () => void } 
 
-type EditUserRowState = {
-    user: EditFormUser
-}
-
 const emptyState: UserRowState = { isEditMode: false };
 
 export default function UserRow(props: UserRowProps) {
@@ -35,11 +31,14 @@ export default function UserRow(props: UserRowProps) {
         <td>{props.user.name}</td>
         <td>{props.user.age}</td>
         <td>{dateDisplayed(props.user.date)}</td>
+        <td>{props.user.occupation}</td>
         <td>
             <DeleteUserButton refresh={props.refresh} id={props.user.id} />
         </td>
         <td>
-            <button onClick={() => setState({ isEditMode: true })}>Edit</button>
+            <button 
+                className="edit-button"
+                onClick={() => setState({ isEditMode: true })}>Edit</button>
         </td>
     </tr>);
 }
@@ -50,8 +49,9 @@ function createEditUserFromUser(user: User): EditFormUser {
     return {
         name: user.name,
         age: user.age.toString(),
-        date: user.date.toString(),
-        id: user.id
+        date: moment(user.date).format('YYYY-MM-DD'),
+        id: user.id,
+        occupation: user.occupation
     }
 }
 
@@ -71,7 +71,9 @@ function EditUserRow(props: EditUserRowProps) {
     const modifyAge = (e: FormEvent<HTMLInputElement>) => {
         setState({ user: { ...state.user, age: e.currentTarget.value } })
     }
-
+    const modifyOccupation = (e: FormEvent<HTMLInputElement>) => {
+        setState({ user: { ...state.user, age: e.currentTarget.value } });
+    }
     
 
     return (
@@ -79,6 +81,7 @@ function EditUserRow(props: EditUserRowProps) {
                 <td>
                     <input 
                         className="name-input"
+                        type="text"
                         name="name" 
                         value={state.user.name} 
                         onChange={modifyName} />
@@ -86,6 +89,7 @@ function EditUserRow(props: EditUserRowProps) {
                 <td>
                     <input 
                         className="age-input"
+                        type="text"
                         name="age"
                         pattern="[0-9]*" 
                         value={state.user.age} 
@@ -95,10 +99,22 @@ function EditUserRow(props: EditUserRowProps) {
                     <input type="date" name="date" value={state.user.date} onChange={modifyDate} />
                 </td>
                 <td>
-                    <button onClick={submit} >Submit</button>
+                    <input 
+                        className="occupation-input"
+                        type="text"
+                        name="occupation" 
+                        value={state.user.occupation} 
+                        onChange={modifyOccupation} />
                 </td>
                 <td>
-                    <button onClick={props.onClose}>Close</button>
+                    <button 
+                        className="submit-button"
+                        onClick={submit} >Submit</button>
+                </td>
+                <td>
+                    <button 
+                        className="close-button"
+                        onClick={props.onClose}>Close</button>
                 </td>
         </tr>
     )
@@ -107,8 +123,9 @@ function EditUserRow(props: EditUserRowProps) {
 
 
 function dateDisplayed(dateString: string): string {
+    const pad = (s: number) => s < 10 ? '0' + s : s;
     const date = new Date(dateString);
-    return `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`;
+    return `${pad(date.getDate())}-${pad(date.getMonth())}-${date.getFullYear()}`;
 }
 
 

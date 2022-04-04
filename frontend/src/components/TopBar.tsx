@@ -1,10 +1,10 @@
 import React from 'react'
-import "./TopBar.css"
-import logo from "../logo.svg"
+import "./styles/TopBar.css"
 
 export default function TopBar() {
     return (<div className='topbar'>
-        <img src={logo} className='logo' />  
+        <img src={`${process.env.PUBLIC_URL}/logo512.png`} className='logo' />  
+        <h1 className='header'>User Management Application</h1>
     </div>)
 }
 

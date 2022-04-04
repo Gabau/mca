@@ -39,13 +39,13 @@ function userFromForm(toCreate: FormUser): UserCreated {
   const result = {
     name: toCreate.name,
     age: parseInt(toCreate.age),
-    date: new Date(toCreate.date)
+    date: new Date(toCreate.date),
+    occupation: toCreate.occupation
   }
   return result;
 }
 
 function checkResponse(response: Response) {
-  console.log(response)
   if (response.ok) {
     return response.json();
   }

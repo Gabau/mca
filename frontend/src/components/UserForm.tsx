@@ -1,7 +1,7 @@
 import React, { FormEvent, useState } from 'react'
 import { createUser } from '../api/UsersAPI';
 import FormUser from '../models/FormUser';
-import './UserForm.css'
+import './styles/UserForm.css'
 
 type UserFormProps = {
     show: boolean,
@@ -17,6 +17,7 @@ const emptyState: UserFormState = {
         name: '',
         date: '',
         age: '',
+        occupation: ''
     }
  }
 
@@ -68,6 +69,15 @@ export default function UserForm(props: UserFormProps) {
                                 }
                             })}
                              />
+                    </label>
+                    <br />
+                    <label>
+                        Occupation: 
+                        <input type="text" 
+                            name="occupation"
+                            required={true}
+                            value={state.user.occupation}
+                            onChange={event => setState({ user: { ...state.user, occupation: event.target.value } })} />
                     </label>
                     <br />
                 </div>

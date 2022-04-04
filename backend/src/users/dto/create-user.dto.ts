@@ -3,4 +3,4 @@ export type CreateUserDto = {
   readonly occupation: string;
   readonly age: number;
   readonly date: Date;
-}
+};

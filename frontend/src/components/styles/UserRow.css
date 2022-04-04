@@ -1,0 +1,17 @@
+.Row:hover {
+  background-color: turquoise;
+  
+}
+
+.name-input {
+  width: 40%;
+}
+
+.age-input {
+  width: 10%;
+}
+
+.Row {
+  background-color: antiquewhite;
+  color: black;
+}

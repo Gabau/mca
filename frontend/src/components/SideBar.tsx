@@ -1,5 +1,5 @@
 import React from "react"
-import "./SideBar.css"
+import "./styles/SideBar.css"
 
 /**
  * Implementation of a side bar

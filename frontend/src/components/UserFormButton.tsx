@@ -1,7 +1,6 @@
 import { useState } from "react"
 import UserForm from "./UserForm"
 import React from 'react'
-import FormUser from "../models/FormUser";
 
 type UserFormProps = {
     onClose: () => void,

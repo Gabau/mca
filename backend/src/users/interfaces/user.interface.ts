@@ -3,4 +3,5 @@ export interface User {
   name: string;
   age: number;
   date: Date;
+  occupation: string;
 }
