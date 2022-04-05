@@ -1,6 +1,6 @@
 import React from 'react'
-import SideBar from './SideBar'
-import UserTable from './UserTable'
+import SideBar from '../components/SideBar'
+import UserTable from '../components/UserTable'
 import "./styles/HomePage.css"
 
 
