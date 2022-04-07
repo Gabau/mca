@@ -27,7 +27,7 @@ Run `install.sh` from project root to install the application.
  * If the database has not been created create the data base in the SQL server with `create database mcatestdb`.
  * Set synchronisation to true in `backend/src/config/keys.ts`.
  * Run `serve.sh` from project root to start the application.
- * The application should be available from `localhost:3000`
+ * The application should be available from [localhost](https://localhost:3000).
 
 ```javascript
 /*backend/src/config/keys.ts*/
