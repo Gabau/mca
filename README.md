@@ -9,6 +9,7 @@ Web application built using react and nest js. Data is stored usng MySQL.
 
  * yarn 1.22.17
  * node v17.8.0
+ * MySQL
 
 ## Installation
 
