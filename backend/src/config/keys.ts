@@ -9,7 +9,7 @@ export const typeOrmOptions: TypeOrmModuleOptions = {
   password: 'password',
   database: 'mcatestdb',
   entities: [User],
-  synchronize: false,
+  synchronize: true,
 };
 
 export const portNumber = 3001;
