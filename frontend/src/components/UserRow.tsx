@@ -33,7 +33,7 @@ export default function UserRow(props: UserRowProps) {
     return (<tr className="Row">
         <td>{props.user.name}</td>
         <td>{props.user.age}</td>
-        <td>{moment(props.user.date).format('YYYY-MM-DD')}</td>
+        <td>{moment(props.user.date).format('DD-MM-YYYY')}</td>
         <td>{props.user.occupation}</td>
         <td>
             <DeleteUserButton refresh={props.refresh} id={props.user.id} />
@@ -77,7 +77,7 @@ function EditUserRow(props: EditUserRowProps) {
         setState({ user: { ...state.user, age: e.currentTarget.value } })
     }
     const modifyOccupation = (e: FormEvent<HTMLInputElement>) => {
-        setState({ user: { ...state.user, age: e.currentTarget.value } });
+        setState({ user: { ...state.user, occupation: e.currentTarget.value } });
     }
     
 
