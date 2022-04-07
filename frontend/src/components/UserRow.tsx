@@ -2,12 +2,12 @@ import moment from "moment";
 import React, { FormEvent, useState } from "react";
 import { updateUser } from "../api/UsersAPI";
 import EditFormUser from "../models/EditFormUser";
-import User from "../models/User";
+import UserFromAPI from "../models/UserFromAPI";
 import DeleteUserButton from "./DeleteUserButton";
 import "./styles/UserRow.css"
 
 type UserRowProps = {
-    user: User,
+    user: UserFromAPI,
     key: number,
     refresh: () => void,
 };
@@ -21,6 +21,9 @@ type EditUserRowProps = UserRowProps & { onClose: () => void }
 
 const emptyState: UserRowState = { isEditMode: false };
 
+/**
+ * A row in the user table.
+ */
 export default function UserRow(props: UserRowProps) {
     const [state, setState] = useState(emptyState);
     if (state.isEditMode) {
@@ -30,7 +33,7 @@ export default function UserRow(props: UserRowProps) {
     return (<tr className="Row">
         <td>{props.user.name}</td>
         <td>{props.user.age}</td>
-        <td>{dateDisplayed(props.user.date)}</td>
+        <td>{moment(props.user.date).format('YYYY-MM-DD')}</td>
         <td>{props.user.occupation}</td>
         <td>
             <DeleteUserButton refresh={props.refresh} id={props.user.id} />
@@ -45,7 +48,7 @@ export default function UserRow(props: UserRowProps) {
 
 
 
-function createEditUserFromUser(user: User): EditFormUser {
+function createEditUserFromUser(user: UserFromAPI): EditFormUser {
     return {
         name: user.name,
         age: user.age.toString(),
@@ -55,7 +58,9 @@ function createEditUserFromUser(user: User): EditFormUser {
     }
 }
 
-
+/**
+ * Used for a user row that can be edited.
+ */
 function EditUserRow(props: EditUserRowProps) {
     const [state, setState] = useState({ user: createEditUserFromUser(props.user) });
 

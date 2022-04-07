@@ -21,6 +21,9 @@ const emptyState: UserFormState = {
     }
  }
 
+ /**
+  * Form used to create a user.
+  */
 export default function UserForm(props: UserFormProps) {
     const [state, setState] = useState(emptyState);
     const onSubmit = (event: FormEvent) => {

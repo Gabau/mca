@@ -1,10 +1,10 @@
 import { usersURL } from "../config/keys"
-import User from "../models/User";
+import UserFromAPI from "../models/UserFromAPI";
 import FormUser from "../models/FormUser";
 import UserCreated from "../models/UserCreated";
 import EditFormUser from "../models/EditFormUser";
 
-export function getUsers(): Promise<User[]> {
+export function getUsers(): Promise<UserFromAPI[]> {
   return fetch(usersURL).then(checkResponse);
 }
 

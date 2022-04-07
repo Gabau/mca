@@ -1,3 +1,7 @@
+/**
+ * Represents the user information in a form
+ * for editing.
+ */
 type EditFormUser = {
   name: string,
   age: string,

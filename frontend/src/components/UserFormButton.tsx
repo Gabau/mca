@@ -6,7 +6,9 @@ type UserFormProps = {
     onClose: () => void,
 };
 
-
+/**
+ * Button for showing user form.
+ */
 export default function UserFormButton(props: UserFormProps) {
     const [show, setShow] = useState(false);
     const onClose = () => {

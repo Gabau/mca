@@ -1,12 +1,12 @@
 import React from 'react'
 import { getUsers } from '../api/UsersAPI';
-import User from '../models/User';
+import UserFromAPI from '../models/UserFromAPI';
 import UserFormButton from './UserFormButton';
 import UserRow from './UserRow';
 import './styles/UserTable.css'
 
 type UserTableState = {
-    users: User[],
+    users: UserFromAPI[],
 };
 
 const emptyState: UserTableState = { users: [] };
