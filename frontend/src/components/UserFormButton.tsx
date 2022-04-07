@@ -1,6 +1,7 @@
 import { useState } from "react"
 import UserForm from "./UserForm"
 import React from 'react'
+import './styles/Button.css'
 
 type UserFormProps = {
     onClose: () => void,
@@ -17,11 +18,11 @@ export default function UserFormButton(props: UserFormProps) {
     }
     return (<div>
         <button
-        className="toggle-button"
+        className="add-button"
         onClick={() => {
             setShow(true)
         }}
-         >{show ? "Close" : "Add"}</button>
+         >Add</button>
         <UserForm 
             onClose={onClose}
             show={show}/>

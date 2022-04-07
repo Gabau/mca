@@ -1,21 +1,32 @@
-.delete-button {
-  color: red;
-  height: 100%;
-  width: 100%;
-  align-content: center;
-  text-align: center;
-  border: none;
-  /* background-color: aliceblue; */
-  padding: 0;
-}
 
-.delete-button:hover {
+
+
+
+button:hover {
   background-color: turquoise;
 }
 
-.delete-button:active {
-  background-color: rgb(121, 121, 122);
+
+.delete-button {
+  color: red;
 }
 
+.delete-button:hover {
+  background-color: orange;
+}
 
+.edit-button {
+  color: green;
+}
 
+.add-button:hover {
+  background-color: gray;
+}
+
+.submit-button {
+  color: green;
+}
+
+.close-button {
+  color: green;
+}
