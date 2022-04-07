@@ -21,7 +21,7 @@ export class UsersController {
     return this.usersService.findAll();
   }
 
-  @Get('/:id')
+  @Get(':id')
   async findUser(@Param('id') id): Promise<User> {
     return this.usersService.findUser(id);
   }
@@ -31,12 +31,12 @@ export class UsersController {
     return this.usersService.createUser(createUserDto);
   }
 
-  @Delete('/:id')
+  @Delete(':id')
   async remove(@Param('id') id): Promise<DeleteResult> {
     return this.usersService.removeUser(id);
   }
 
-  @Put('/:id')
+  @Put(':id')
   update(
     @Body() updateUserDto: CreateUserDto,
     @Param('id') id,
