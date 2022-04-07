@@ -17,15 +17,17 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build-backend:
-    services:
-        mysql:
-          image: mysql:5.7
-          env:
-            MYSQL_ROOT_PASSWORD: password
-          ports:
-          - 3306:3306
+
+          
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+
+    services:
+      mydb:
+        image: mysql:5.7
+        env:
+          MYSQL_ROOT_PASSWORD: password
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=5
     
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -35,12 +37,11 @@ jobs:
       - name: Verify MySQL connection from host
         run: |
           sudo apt-get install -y mysql-client
-          mysql --host 127.0.0.1 --port 3306 -uroot -ppassword -e "SHOW DATABASES"
+          mysql --host mydb -uroot -ppassword -e "SHOW DATABASES;"
       
       - name: Setup Runner Database
         run: |
-          sleep 9
-          mysql -uroot -h127.0.0.1 -proot -e 'CREATE DATABASE IF NOT EXISTS mcatestdb;'
+          mysql --host mydb -uroot -ppassword -e 'CREATE DATABASE IF NOT EXISTS mcatestdb;'
 
       - name: install prerequisites
         working-directory: './backend'
