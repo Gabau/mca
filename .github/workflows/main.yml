@@ -35,10 +35,11 @@ jobs:
       - name: Verify MySQL connection from host
         run: |
           sudo apt-get install -y mysql-client
-          mysql --host 127.0.0.1 --port 32574 -uroot -ppassword -e "SHOW DATABASES"
+          mysql --host 127.0.0.1 --port 3306 -uroot -ppassword -e "SHOW DATABASES"
       
       - name: Setup Runner Database
         run: |
+          sleep 9
           mysql -uroot -h127.0.0.1 -proot -e 'CREATE DATABASE IF NOT EXISTS mcatestdb;'
 
       - name: install prerequisites
