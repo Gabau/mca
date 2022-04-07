@@ -37,6 +37,7 @@ jobs:
       - name: Verify MySQL connection from host
         run: |
           apt-get update
+          apt-get install yarn
           apt-get install -y mysql-client
           mysql --host mydb -uroot -ppassword -e "SHOW DATABASES;"
       
