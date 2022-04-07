@@ -22,11 +22,14 @@ The database used can be changed in the same file.
 Run `install.sh` from project root to install the application.
 
 
-If the database has not been created create the data base in the SQL server with `create database mcatestdb`.
+## Quick start
 
-Set synchronisation to true in `backend/src/config/keys.ts`.
+ * If the database has not been created create the data base in the SQL server with `create database mcatestdb`.
+ * Set synchronisation to true in `backend/src/config/keys.ts`.
+ * Run `serve.sh` from project root to start the application.
 
 ```javascript
+/*backend/src/config/keys.ts*/
 export const typeOrmOptions: TypeOrmModuleOptions = {
   type: 'mysql',
   host: 'localhost',
@@ -39,7 +42,6 @@ export const typeOrmOptions: TypeOrmModuleOptions = {
 };
 ```
 
-If the database was used by the application before, set synchronize to false.
-Run `serve.sh` from project root to start the application.
+On runs when the database and tables have been created, set synchronize to false.
 
 
