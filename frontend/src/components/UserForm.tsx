@@ -28,7 +28,7 @@ export default function UserForm(props: UserFormProps) {
     const [state, setState] = useState(emptyState);
     const onSubmit = (event: FormEvent) => {
         event.preventDefault();
-        createUser(state.user).then(props.onClose);
+        createUser(state.user).then(props.onClose).then(() => setState(emptyState));
     }
     if (!props.show) {
         return null;
@@ -60,7 +60,7 @@ export default function UserForm(props: UserFormProps) {
                     </label>
                     <br />
                     <label>
-                        Date:
+                        Date Created:
                         <input type="date" 
                             name="date" 
                             required={true}
@@ -84,7 +84,8 @@ export default function UserForm(props: UserFormProps) {
                     </label>
                     <br />
                 </div>
-            <input type="submit" className="modal-footer"/>
+            <input type="submit" className="modal-footer" />
+            <button className="modal-footer" onClick={props.onClose}>Close</button>
         </div>
     </form>)
 

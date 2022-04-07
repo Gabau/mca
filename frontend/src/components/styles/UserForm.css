@@ -25,3 +25,19 @@
 .modal-header {
   margin: 0px;
 }
+
+.modal-footer {
+  width: 50%;
+  height: 50%;
+  padding: 0;
+  border: 5px solid red;
+  cursor: pointer;
+  font-size: larger;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.modal-footer:hover {
+  background-color: antiquewhite;
+  transform: scale(0.8);
+}
+

@@ -14,20 +14,3 @@ code {
 }
 
 
-button:active {
-  background-color: rgb(121, 121, 122);
-}
-
-button {
-  height: 100%;
-  width: 100%;
-  align-content: center;
-  text-align: center;
-  font-family: "Comic Sans MS", "Comic Sans", cursive, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
-  font-size: larger;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-}
