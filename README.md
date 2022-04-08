@@ -9,7 +9,7 @@ Web application built using react and nest js. Data is stored usng MySQL.
 
  * yarn 1.22.17
  * node v17.8.0
- * MySQL
+ * MySQL 8
 
 ## Installation
 
@@ -20,6 +20,10 @@ Configure the user and password in `backend/src/config/keys.ts`.
 The database used can be changed in the same file.
 
 Run `install.sh` from project root to install the application.
+
+
+
+## Quick start
 
 
 ### MySQL initialisation
@@ -33,10 +37,8 @@ CREATE USER mca IDENTIFIED BY 'password';
 GRANT ALL ON mcatestdb.* to mca;
 ```
 
+### Initial start
 
-## Quick start
-
- * If the database has not been created create the data base in the SQL server with `create database mcatestdb`.
  * Set synchronisation to true in `backend/src/config/keys.ts`.
  * Run `serve.sh` from project root to start the application.
  * The application should be available from [localhost](https://localhost:3000).
@@ -51,7 +53,7 @@ export const typeOrmOptions: TypeOrmModuleOptions = {
   password: 'password',
   database: 'mcatestdb',
   entities: [User],
-  synchronize: true,
+  synchronize: true,  /* To modify to false after initial run*/
 };
 ```
 
