@@ -43,6 +43,8 @@ jobs:
       - name: Setup Runner Database
         run: |
           mysql --host 127.0.0.1 --port 3306 -uroot -ppassword -e 'CREATE DATABASE IF NOT EXISTS mcatestdb;'
+          mysql --host 127.0.0.1 --port 3306 -uroot -ppassword -e 'CREATE USER mca IDENTIFIED BY "password";'
+          mysql --host 127.0.0.1 --port 3306 -uroot -ppassword -e 'GRANT ALL ON mcatestdb.* to mca;'
 
       - name: install prerequisites
         working-directory: './backend'
