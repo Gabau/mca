@@ -22,6 +22,18 @@ The database used can be changed in the same file.
 Run `install.sh` from project root to install the application.
 
 
+### MySQL initialisation
+
+Run the following under root in MySQL, to initialise the
+database.
+
+```sql
+CREATE DATABASE mcatestdb;
+CREATE USER mca IDENTIFIED BY 'password';
+GRANT ALL ON mcatestdb.* to mca;
+```
+
+
 ## Quick start
 
  * If the database has not been created create the data base in the SQL server with `create database mcatestdb`.
@@ -44,5 +56,7 @@ export const typeOrmOptions: TypeOrmModuleOptions = {
 ```
 
 On runs when the database and tables have been created, set synchronize to false.
+
+
 
 
