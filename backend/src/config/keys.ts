@@ -5,7 +5,7 @@ export const typeOrmOptions: TypeOrmModuleOptions = {
   type: 'mysql',
   host: 'localhost',
   port: 3306,
-  username: 'root',
+  username: 'mca',
   password: 'password',
   database: 'mcatestdb',
   entities: [User],
