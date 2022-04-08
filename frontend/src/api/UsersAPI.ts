@@ -1,3 +1,6 @@
+/**
+ * File for performing API requests.
+ */
 import { usersURL } from "../config/keys"
 import UserFromAPI from "../models/UserFromAPI";
 import FormUser from "../models/FormUser";

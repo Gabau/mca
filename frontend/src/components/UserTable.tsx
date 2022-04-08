@@ -11,6 +11,9 @@ type UserTableState = {
 
 const emptyState: UserTableState = { users: [] };
 
+/**
+ * Table of users.
+ */
 export default function UserTable() {
     const [state, setState] = React.useState(emptyState)
     const refresh = () => {

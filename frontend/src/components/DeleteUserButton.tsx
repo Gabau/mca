@@ -8,6 +8,9 @@ type DeleteUserButtonProps = {
     refresh: () => void;
 };
 
+/**
+ * The delete user button.
+ */
 export default function DeleteUserButton(props: DeleteUserButtonProps) {
     return <button 
                 className="delete-button"

@@ -4,7 +4,6 @@ import "./styles/SideBar.css"
 /**
  * Implementation of a side bar
  */
-
 export default function SideBar() {
     
     return (<div className="sidebar">

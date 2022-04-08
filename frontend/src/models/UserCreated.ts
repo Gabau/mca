@@ -1,3 +1,6 @@
+/**
+ * The created user.
+ */
 type UserCreated = {
   name: string,
   date: Date,
